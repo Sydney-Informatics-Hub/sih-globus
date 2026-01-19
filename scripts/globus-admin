@@ -1,0 +1,82 @@
+#!/bin/bash
+
+# Globus Administration Helper
+# Provides easy access to Globus group administration tools
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+show_help() {
+    cat << EOF
+Globus Administration Helper
+
+USAGE:
+    $0 <command> [options]
+
+COMMANDS:
+    invite         Bulk invite users to a group
+    admin          Group administration tasks
+    list           List your groups
+    members        Show group members
+    info           Show group information
+    help           Show this help message
+
+EXAMPLES:
+    # List all your groups
+    $0 list
+
+    # Show members of a specific group
+    $0 members GROUP_ID
+
+    # Bulk invite users from file
+    $0 invite GROUP_ID --users-file users.txt --role member
+
+    # Show group information
+    $0 info GROUP_ID
+
+For detailed help on specific commands:
+    $0 invite --help
+    $0 admin --help
+
+EOF
+}
+
+case "$1" in
+    "invite")
+        shift
+        exec python3 "$SCRIPT_DIR/bulk_invite.py" "$@"
+        ;;
+    "admin")
+        shift
+        exec python3 "$SCRIPT_DIR/group_admin.py" "$@"
+        ;;
+    "list")
+        shift
+        exec python3 "$SCRIPT_DIR/group_admin.py" list "$@"
+        ;;
+    "members")
+        if [ -z "$2" ]; then
+            echo "Error: Group ID required"
+            echo "Usage: $0 members GROUP_ID"
+            exit 1
+        fi
+        shift
+        exec python3 "$SCRIPT_DIR/group_admin.py" members "$@"
+        ;;
+    "info")
+        if [ -z "$2" ]; then
+            echo "Error: Group ID required"
+            echo "Usage: $0 info GROUP_ID"
+            exit 1
+        fi
+        shift
+        exec python3 "$SCRIPT_DIR/group_admin.py" info "$@"
+        ;;
+    "help"|"--help"|"-h"|"")
+        show_help
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Run '$0 help' for usage information"
+        exit 1
+        ;;
+esac

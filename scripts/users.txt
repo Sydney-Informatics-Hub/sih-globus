@@ -1,0 +1,9 @@
+# Example users file for bulk operations
+# One username or email per line
+# Lines starting with # are ignored
+
+# Example users (replace with actual usernames/emails):
+# user1@example.com
+# user2@institution.edu
+# johndoe@globusid.org
+# jane.smith@university.edu
