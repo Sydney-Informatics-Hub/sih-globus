@@ -3,33 +3,8 @@
 ## Resources 
 
 - [CLI reference docs](https://docs.globus.org/cli/reference/)
-
-## CLI set up 
-
-### [Installation](https://docs.globus.org/cli/#installation)
-
-Globus recommend using pipx to install and manage your globus-cli installation. 
-
-### [Enable tab completion](https://docs.globus.org/cli/#tab-completion)
-
-Edit your .bashrc to include the bash code in the embedded link above. They provide other instructions for 
-
-### Login 
-
-Run the command below to automatically open a browser window for you to login with your University of Sydney credentials and Okta. 
-```
-globus login 
-```
-
-For information on which identities are in session see:
-```
-globus session show
-```
-
-For information on your primary identity or full identity set see
-```
-globus whoami
-```
+- [Installation](https://docs.globus.org/cli/#installation)
+- [Enable tab completion](https://docs.globus.org/cli/#tab-completion)
 
 ## Administrative Tools
 
