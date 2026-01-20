@@ -6,7 +6,7 @@ Streamlined tools for Globus CLI administration, with focus on group management 
 
 ## 📖 Documentation
 
-**For complete documentation, visit: [https://sydney-informatics-hub.github.io/sih-globus/](https://yourusername.github.io/sih-globus/)**
+**For complete documentation, visit: [https://sydney-informatics-hub.github.io/sih-globus/](https://sydney-informatics-hub.github.io/sih-globus/)**
 
 The documentation includes:
 - 🚀 [Quick Start Guide](https://sydney-informatics-hub.githubname.github.io/sih-globus/quickstart/)
