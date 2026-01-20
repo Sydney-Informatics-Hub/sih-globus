@@ -9,16 +9,16 @@ Streamlined tools for Globus CLI administration, with focus on group management 
 **For complete documentation, visit: [https://yourusername.github.io/sih-globus/](https://yourusername.github.io/sih-globus/)**
 
 The documentation includes:
-- 🚀 [Quick Start Guide](https://yourusername.github.io/sih-globus/quickstart/)
-- 🛠 [Administrative Tools](https://yourusername.github.io/sih-globus/tools/overview/)
-- 📋 [Common Workflows](https://yourusername.github.io/sih-globus/workflows/common-tasks/)
-- 🔧 [Installation Instructions](https://yourusername.github.io/sih-globus/installation/)
+- 🚀 [Quick Start Guide](https://yourusersydney-informatics-hub.githubname.github.io/sih-globus/quickstart/)
+- 🛠 [Administrative Tools](https://sydney-informatics-hub.github.github.io/sih-globus/tools/overview/)
+- 📋 [Common Workflows](https://sydney-informatics-hub.github.github.io/sih-globus/workflows/common-tasks/)
+- 🔧 [Installation Instructions](https://sydney-informatics-hub.github.github.io/sih-globus/installation/)
 
 ## ⚡ Quick Start
 
 ```bash
 # 1. Clone and setup
-git clone https://github.com/yourusername/sih-globus.git
+git clone https://github.com/sydney-informatics-hub.github/sih-globus.git
 cd sih-globus
 chmod +x scripts/*.py scripts/globus-admin
 
@@ -34,7 +34,7 @@ globus login
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our detailed [Contributing Guide](https://yourusername.github.io/sih-globus/contributing/) in the documentation.
+We welcome contributions! Please see our detailed [Contributing Guide](https://sydney-informatics-hub.github.github.io/sih-globus/contributing/) in the documentation.
 
 ### Quick Contribution Steps
 
