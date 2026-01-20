@@ -1,0 +1,91 @@
+site_name: SIH Globus Toolkit
+site_description: Streamlined tools for Globus CLI administration with focus on group management
+site_author: SIH Team
+site_url: https://yourusername.github.io/sih-globus
+
+repo_name: yourusername/sih-globus
+repo_url: https://github.com/yourusername/sih-globus
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: assets/usyd-logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.select
+  palette:
+    - scheme: default
+      primary: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - include-markdown
+
+extra_css:
+  - extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      preserve_tabs: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: installation.md
+    - Quick Start: quickstart.md
+    - Authentication: auth.md
+  - Administrative Tools:
+    - Overview: tools/overview.md
+    - Bulk Invite: tools/bulk-invite.md
+    - Group Management: tools/group-admin.md
+    - Demo & Testing: tools/demo.md
+  - Workflows:
+    - Common Tasks: workflows/common-tasks.md
+    - Team Onboarding: workflows/onboarding.md
+    - Group Audit: workflows/audit.md
+  - Reference:
+    - CLI Commands: reference/cli.md
+    - Script API: reference/scripts.md
+    - Troubleshooting: reference/troubleshooting.md
+  - Contributing: contributing.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Sydney-Informatics-Hub/sih-globus
+  analytics:
+    provider: google
+    property: G-TNWWV3HK57
+  version:
+    provider: mike

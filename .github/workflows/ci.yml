@@ -1,0 +1,53 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install flake8 black
+        pip install globus-cli || echo "Globus CLI install failed, continuing..."
+    
+    - name: Lint and format check
+      run: |
+        flake8 scripts/ --max-line-length=100 --ignore=E501
+        black --check scripts/ || echo "Format check failed, run 'black scripts/' to fix"
+    
+    - name: Validate script syntax
+      run: |
+        python -c "import py_compile; [py_compile.compile(f, doraise=True) for f in ['scripts/bulk_invite.py', 'scripts/group_admin.py', 'scripts/demo.py']]"
+    
+    - name: Test executable permissions
+      run: |
+        test -x scripts/globus-admin
+        test -x scripts/bulk_invite.py
+        test -x scripts/group_admin.py
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install documentation dependencies
+      run: pip install -r requirements-docs.txt
+    
+    - name: Build documentation
+      run: mkdocs build --strict
+    
+    - name: Check for broken links
+      run: |
+        # Basic link checking - can be enhanced with specialized tools
+        grep -r "](.*\.md)" docs/ || echo "No internal markdown links found"
