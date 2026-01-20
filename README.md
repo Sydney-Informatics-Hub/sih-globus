@@ -6,10 +6,10 @@ Streamlined tools for Globus CLI administration, with focus on group management 
 
 ## 📖 Documentation
 
-**For complete documentation, visit: [https://yourusername.github.io/sih-globus/](https://yourusername.github.io/sih-globus/)**
+**For complete documentation, visit: [https://sydney-informatics-hub.github.io/sih-globus/](https://yourusername.github.io/sih-globus/)**
 
 The documentation includes:
-- 🚀 [Quick Start Guide](https://yourusersydney-informatics-hub.githubname.github.io/sih-globus/quickstart/)
+- 🚀 [Quick Start Guide](https://sydney-informatics-hub.githubname.github.io/sih-globus/quickstart/)
 - 🛠 [Administrative Tools](https://sydney-informatics-hub.github.github.io/sih-globus/tools/overview/)
 - 📋 [Common Workflows](https://sydney-informatics-hub.github.github.io/sih-globus/workflows/common-tasks/)
 - 🔧 [Installation Instructions](https://sydney-informatics-hub.github.github.io/sih-globus/installation/)
@@ -83,6 +83,6 @@ mkdocs serve
 
 ## 📞 Support
 
-- **Documentation**: [https://yourusername.github.io/sih-globus/](https://Sydney-Informatics-Hub.github.io/sih-globus/)
+- **Documentation**: [https://sydney-informatics-hub.github.io/sih-globus/](https://Sydney-Informatics-Hub.github.io/sih-globus/)
 - **Issues**: [GitHub Issues](https://github.com/Sydney-Informatics-Hub/sih-globus/issues)
 
