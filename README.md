@@ -3,7 +3,6 @@
 Streamlined tools for Globus CLI administration, with focus on group management and bulk operations.
 
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://yourusername.github.io/sih-globus/)
-[![CI](https://github.com/yourusername/sih-globus/workflows/CI/badge.svg)](https://github.com/yourusername/sih-globus/actions)
 
 ## 📖 Documentation
 
@@ -82,25 +81,8 @@ pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-## 📋 Features
-
-- **Bulk Operations**: Invite multiple users to groups simultaneously
-- **Group Management**: Comprehensive tools for group administration
-- **University Integration**: Designed for University of Sydney workflows
-- **CLI Wrapper**: Simplifies complex Globus CLI operations
-- **Error Handling**: Robust error handling and reporting
-- **Dry-run Mode**: Test operations before execution
-
 ## 📞 Support
 
-- **Documentation**: [https://yourusername.github.io/sih-globus/](https://yourusername.github.io/sih-globus/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/sih-globus/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/sih-globus/discussions)
+- **Documentation**: [https://yourusername.github.io/sih-globus/](https://Sydney-Informatics-Hub.github.io/sih-globus/)
+- **Issues**: [GitHub Issues](https://github.com/Sydney-Informatics-Hub/sih-globus/issues)
 
-## 📜 License
-
-This project is maintained by the Sydney Informatics Hub for the University of Sydney community.
-
----
-
-*For detailed documentation, examples, and workflows, please visit our [documentation site](https://yourusername.github.io/sih-globus/).*
