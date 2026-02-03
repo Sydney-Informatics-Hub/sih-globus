@@ -44,37 +44,4 @@ The SIH Globus Toolkit provides wrapper scripts and utilities to simplify common
 
     [:octicons-arrow-right-24: Tools Overview](tools/overview.md)
 
--   :material-workflow:{ .lg .middle } **Common Workflows**
-
-    ---
-
-    Step-by-step guides for typical tasks
-
-    [:octicons-arrow-right-24: Workflows](workflows/common-tasks.md)
-
--   :material-book-open-variant:{ .lg .middle } **Reference**
-
-    ---
-
-    Complete CLI and script documentation
-
-    [:octicons-arrow-right-24: Reference](reference/cli.md)
-
 </div>
-
-## Status
-
-!!! success "Ready to Use"
-    ✅ Globus CLI v3.41.0 installed and configured  
-    ✅ Administrative scripts tested and documented  
-    ✅ Integration with University of Sydney authentication  
-
-## Resources
-
-* [Globus CLI Reference](https://docs.globus.org/cli/reference/)
-* [GitHub Repository](https://github.com/yourusername/sih-globus)
-* [Report Issues](https://github.com/yourusername/sih-globus/issues)
-
----
-
-*This toolkit is maintained by the SIH team for streamlined Globus administration.*
