@@ -15,13 +15,12 @@ The bulk invite script allows you to invite multiple users to a Globus group in 
 Create a users file with one email address per line:
 
 ```bash
-# users.txt
-user1@example.com
-user2@university.edu
-user3@company.org
-
-# Comments are ignored
-# Empty lines are skipped
+# users.txt 
+# comment lines skipped
+# empty lines ignored
+uinkey1@sydney.edu.au
+unikey2@sydney.edu.au
+unikey3@sydney.edu.au
 ```
 
 Then run:

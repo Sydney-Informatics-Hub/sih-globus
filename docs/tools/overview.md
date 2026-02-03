@@ -79,27 +79,6 @@ The primary entry point for all administrative operations:
 - Quick start guidance
 - Safe testing without real operations
 
-## Script Architecture
-
-```mermaid
-graph TD
-    A[globus-admin] --> B[bulk_invite.py]
-    A --> C[group_admin.py]
-    A --> D[Globus CLI]
-    
-    B --> E[User File Processing]
-    B --> F[Role Management]
-    B --> G[Error Handling]
-    
-    C --> H[Group Inspection]
-    C --> I[Member Management]
-    C --> J[Data Export]
-    
-    D --> K[Authentication]
-    D --> L[API Calls]
-    D --> M[Response Processing]
-```
-
 ## Common Options
 
 All scripts support these common patterns:
