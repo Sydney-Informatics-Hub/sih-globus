@@ -32,10 +32,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-plugins:
-  - search
-  - include-markdown
-
 extra_css:
   - extra.css
 
