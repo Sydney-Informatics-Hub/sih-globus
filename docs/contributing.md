@@ -1,6 +1,6 @@
 # Contributing to SIH Globus Toolkit
 
-Thank you for your interest in contributing to the SIH Globus Toolkit!
+Guidelines for internal contributors. 
 
 ## Development Setup
 
