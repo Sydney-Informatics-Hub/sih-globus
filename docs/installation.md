@@ -11,6 +11,8 @@ The Globus CLI is the foundation for all administrative tools.
 
 ### Using pipx (Recommended)
 
+`pipx` installs tools in a self-contained environment, so they won't interfere with your other Python packages
+
 ```bash
 # Install pipx if not already available
 python3 -m pip install --user pipx
@@ -18,6 +20,14 @@ python3 -m pipx ensurepath
 
 # Install Globus CLI
 pipx install globus-cli
+```
+
+### Using uv
+
+Use `uv tool` to install it in a self-contained environment:
+
+```bash
+uv tool install globus-cli
 ```
 
 ### Using pip
