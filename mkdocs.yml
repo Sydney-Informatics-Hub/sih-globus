@@ -56,9 +56,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
-    - Installation: installation.md
-    - Quick Start: quickstart.md
-    - Authentication: auth.md
+    - Installation: setup/installation.md
+    - Quick Start: setup/quickstart.md
+    - Authentication: setup/auth.md
+    - Troubleshooting: setup/troubleshooting.md
   - Administrative Tools:
     - Overview: tools/overview.md
     - Bulk Invite: tools/bulk-invite.md
@@ -68,10 +69,6 @@ nav:
     - Common Tasks: workflows/common-tasks.md
     - Team Onboarding: workflows/onboarding.md
     - Group Audit: workflows/audit.md
-  - Reference:
-    - CLI Commands: reference/cli.md
-    - Script API: reference/scripts.md
-    - Troubleshooting: reference/troubleshooting.md
   - Contributing: contributing.md
 
 extra:

@@ -141,15 +141,3 @@ Get help on any command:
 ./scripts/bulk_invite.py --help
 ./scripts/group_admin.py --help
 ```
-
-## What's Next?
-
-- [Learn about all administrative tools](tools/overview.md)
-- [Explore common workflows](workflows/common-tasks.md)
-- [Read the complete reference](reference/cli.md)
-
-!!! tip "Pro Tips"
-    - Always use `--dry-run` first to test your commands
-    - Keep backups of group data before making bulk changes
-    - Use meaningful names for user files (e.g., `spring2026_students.txt`)
-    - The `--verbose` flag provides detailed output for troubleshooting
