@@ -54,14 +54,85 @@ python3 group_admin.py bulk-remove GROUP_ID --users user1 user2 user3
 python3 group_admin.py export GROUP_ID --output group_backup.json
 ```
 
+### 3. `monitor_transfers.py` - Transfer Monitoring & Analysis
+
+Monitor and analyze Globus transfer tasks with comprehensive CSV output for reporting and analysis.
+
+**Usage:**
+```bash
+# Export all transfers to CSV file
+python3 monitor_transfers.py > transfers.csv
+
+# Monitor transfers for a specific collection
+python3 monitor_transfers.py --collection ddb59aef-6d04-11e5-ba46-22000b92c6ec
+
+# Show only active transfers
+python3 monitor_transfers.py --status ACTIVE
+
+# Show only failed transfers with verbose details
+python3 monitor_transfers.py --status FAILED --verbose
+
+# Monitor by task type (transfers vs deletions)
+python3 monitor_transfers.py --type TRANSFER
+python3 monitor_transfers.py --type DELETE
+
+# Filter by time range
+python3 monitor_transfers.py --requested-after 2026-01-01
+python3 monitor_transfers.py --requested-before 2026-02-01
+
+# Filter by label pattern
+python3 monitor_transfers.py --label "backup*"
+
+# Real-time monitoring with auto-refresh
+python3 monitor_transfers.py --watch --interval 30
+
+# Use endpoint IDs instead of names for faster performance
+python3 monitor_transfers.py --no-names
+```
+
+**CSV Output Format:**
+The script outputs comprehensive transfer data in CSV format with these columns:
+- `task_id`: Unique transfer task identifier
+- `status`: ACTIVE, SUCCEEDED, FAILED, or INACTIVE
+- `type`: TRANSFER or DELETE
+- `initiated_by`: Name of person who started the transfer
+- `owner_email`: Email address of the initiator
+- `label`: User-provided task label
+- `request_time`: When transfer was requested (YYYY-MM-DD HH:MM:SS UTC)
+- `completion_time`: When transfer completed (if finished)
+- `source_endpoint`: Source collection name or ID
+- `dest_endpoint`: Destination collection name or ID
+- `files_total`: Total number of files
+- `files_transferred`: Files successfully transferred
+- `bytes_total`: Total data size in bytes
+- `bytes_transferred`: Bytes successfully transferred
+- `speed_mbps`: Transfer speed in megabits per second
+- `faults`: Number of faults/errors encountered
+- `retries`: Number of subtasks currently retrying
+- `failed_subtasks`: Number of failed subtasks
+- `succeeded_subtasks`: Number of successful subtasks
+
+**Options:**
+- `--collection, -c`: Collection/endpoint UUID to monitor
+- `--status, -s`: Filter by status (ACTIVE, INACTIVE, SUCCEEDED, FAILED) - can use multiple times
+- `--type, -t`: Filter by task type (TRANSFER, DELETE)
+- `--label`: Filter by task label pattern
+- `--requested-after`: Show tasks requested after this time (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)
+- `--requested-before`: Show tasks requested before this time (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS)
+- `--limit, -l`: Maximum number of tasks to retrieve (default: 1000)
+- `--verbose, -v`: Include additional technical details
+- `--watch, -w`: Continuously refresh the display
+- `--interval, -i`: Refresh interval in seconds for watch mode (default: 30)
+- `--no-names`: Show endpoint IDs instead of names for faster performance
+
 ## Setup
 
 1. Make scripts executable:
 ```bash
-chmod +x bulk_invite.py group_admin.py
+chmod +x bulk_invite.py group_admin.py monitor_transfers.py
 ```
 
-2. Create a users file:
+2. Create a users file for bulk operations:
 ```bash
 cp users.txt my_users.txt
 # Edit my_users.txt with actual usernames/emails
@@ -104,6 +175,48 @@ python3 group_admin.py export abc123-group-id --output backup_$(date +%Y%m%d).js
 python3 group_admin.py members abc123-group-id
 ```
 
+### Scenario 4: Transfer Monitoring and Analysis
+```bash
+# Export all recent transfers for analysis
+python3 monitor_transfers.py > all_transfers_$(date +%Y%m%d).csv
+
+# Monitor active transfers in real-time during a large data migration
+python3 monitor_transfers.py --status ACTIVE --watch --interval 5
+
+# Generate a report of failed transfers for troubleshooting
+python3 monitor_transfers.py --status FAILED --limit 100 > failed_transfers.csv
+
+# Monitor transfers for a specific research collection
+python3 monitor_transfers.py --collection ddb59aef-6d04-11e5-ba46-22000b92c6ec > collection_transfers.csv
+
+# Check transfer activity from the last week
+python3 monitor_transfers.py --requested-after $(date -d '7 days ago' +%Y-%m-%d) > weekly_transfers.csv
+
+# Monitor deletion tasks specifically
+python3 monitor_transfers.py --type DELETE --verbose
+
+# Track transfers with specific labels (e.g., backup operations)
+python3 monitor_transfers.py --label "backup*" --status ACTIVE --status SUCCEEDED
+```
+
+### Scenario 5: Data Analysis and Reporting
+```bash
+# Create comprehensive transfer report for leadership
+python3 monitor_transfers.py --limit 5000 > monthly_transfer_report.csv
+
+# Import into spreadsheet for analysis:
+# - Open monthly_transfer_report.csv in Excel/Google Sheets
+# - Create pivot tables for transfer success rates by user
+# - Analyze transfer volumes and speeds over time
+# - Identify frequently failing endpoints
+
+# Monitor specific user's transfer activity
+python3 monitor_transfers.py | grep "user@institution.edu"
+
+# Check for any stuck or long-running transfers
+python3 monitor_transfers.py --status ACTIVE --requested-before $(date -d '1 day ago' +%Y-%m-%d)
+```
+
 ## Tips
 
 - Always use `--dry-run` first to verify what will happen
@@ -111,3 +224,8 @@ python3 group_admin.py members abc123-group-id
 - Use meaningful filenames for user lists (e.g., `new_students_2026.txt`)
 - The scripts handle errors gracefully and provide summaries
 - Use `--verbose` for detailed output during operations
+- Export transfer data to CSV for analysis in spreadsheets or data analysis tools
+- Use `--watch` mode for real-time monitoring during active data migrations
+- The `--no-names` option improves performance when monitoring large numbers of transfers
+- Combine multiple status filters (e.g., `--status ACTIVE --status FAILED`) for custom views
+- Use time filters to generate reports for specific periods
