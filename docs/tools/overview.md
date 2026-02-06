@@ -1,10 +1,8 @@
 # Administrative Tools Overview
 
-The SIH Globus Toolkit provides several wrapper scripts that simplify common group administration tasks.
+Scripts here are to be used by administrators for managing groups, collections, monitoring transfers. 
 
 ## Main Interface
-
-### `globus-admin` - Unified Command Interface
 
 The primary entry point for all administrative operations:
 
@@ -22,9 +20,7 @@ The primary entry point for all administrative operations:
 | `invite` | Bulk invite users | `./scripts/globus-admin invite GROUP_ID --users-file users.txt` |
 | `help` | Show usage information | `./scripts/globus-admin help` |
 
-## Individual Scripts
-
-### 1. Bulk Invite (`bulk_invite.py`)
+## Bulk invite (`bulk_invite.py`)
 
 **Purpose**: Invite multiple users to a Globus group simultaneously.
 
@@ -47,7 +43,7 @@ The primary entry point for all administrative operations:
 ./scripts/bulk_invite.py GROUP_ID --users-file team.txt --dry-run --verbose
 ```
 
-### 2. Group Administration (`group_admin.py`)
+## Group Administration (`group_admin.py`)
 
 **Purpose**: Comprehensive group management operations.
 
@@ -68,16 +64,6 @@ The primary entry point for all administrative operations:
 # Bulk remove users
 ./scripts/group_admin.py bulk-remove GROUP_ID --users user1 user2
 ```
-
-### 3. Demo & Testing (`demo.py`)
-
-**Purpose**: Testing and demonstration of all functionality.
-
-**Features**:
-- Login status verification
-- Usage examples
-- Quick start guidance
-- Safe testing without real operations
 
 ## Common Options
 
