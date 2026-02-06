@@ -1,0 +1,107 @@
+/* University of Sydney Custom Theme Colors */
+
+:root {
+  /* USYD Brand Colors */
+  --md-primary-fg-color: #e64626;        /* USYD Red */
+  --md-primary-fg-color--light: #f27c5c; 
+  --md-primary-fg-color--dark: #c73a1d;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #fcfcfc;
+  
+  /* Accent colors */
+  --md-accent-fg-color: #e64626;
+  --md-accent-fg-color--transparent: rgba(230, 70, 38, 0.1);
+  
+  /* Text colors */
+  --md-typeset-color: #333333;
+  --md-typeset-a-color: #e64626;
+}
+
+/* Dark theme colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #e64626;
+  --md-primary-fg-color--light: #f27c5c;
+  --md-primary-fg-color--dark: #c73a1d;
+  --md-accent-fg-color: #f27c5c;
+  --md-typeset-a-color: #f27c5c;
+}
+
+/* Navigation grid cards - preserve from original design */
+.md-typeset .grid {
+  grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin: 2em 0;
+}
+
+.md-typeset .grid.cards > .card {
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  display: block;
+  margin: 0;
+  padding: 0.8rem;
+  transition: border 250ms, box-shadow 250ms;
+}
+
+.md-typeset .grid.cards > .card:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset .grid.cards > .card > :last-child {
+  margin-bottom: 0;
+}
+
+/* Logo styling */
+.md-header__button.md-logo {
+  margin: 0.2rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.2rem;
+  width: auto;
+}
+
+/* Footer styling */
+.md-footer {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Code block enhancements */
+.md-typeset .highlight .gp {
+  user-select: none;
+}
+
+.md-typeset .highlight .go {
+  color: var(--md-default-fg-color--light);
+}
+
+/* Button styling */
+.md-typeset .md-button {
+  border: 0.1rem solid;
+  border-radius: 0.2rem;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-0.05rem);
+  transition: color 125ms, background-color 125ms, border-color 125ms, transform 125ms;
+}
+
+/* Admonition custom styling */
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: #00c851;
+}
+
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: rgba(0, 200, 81, 0.1);
+  border-color: #00c851;
+}
