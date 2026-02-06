@@ -120,27 +120,3 @@ HTTP 403: Insufficient permissions for group operation
 ```bash
 Connection timeout - please check network connectivity
 ```
-
-## Integration Points
-
-### With Globus CLI
-- Uses official Globus CLI commands
-- Respects authentication tokens
-- Follows CLI output formats
-
-### With External Systems
-- File-based user lists
-- JSON export for integration
-- Exit codes for automation
-
-### With CI/CD
-- Script validation
-- Automated testing
-- Documentation generation
-
----
-
-**Next Steps:**
-- [Bulk Invite Details](bulk-invite.md)
-- [Group Management Details](group-admin.md)
-- [Demo Script Usage](demo.md)
