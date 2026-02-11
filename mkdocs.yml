@@ -68,6 +68,8 @@ nav:
     - Common Tasks: workflows/common-tasks.md
     - Team Onboarding: workflows/onboarding.md
     - Group Audit: workflows/audit.md
+  - Globus Connect Personal:
+    - Getting Started: globus-connect-personal/getting-started.md
   - Reference:
     - CLI Commands: reference/cli.md
     - Script API: reference/scripts.md
